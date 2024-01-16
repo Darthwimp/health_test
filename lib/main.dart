@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_test/constants/theme.dart';
-import 'package:health_test/screens/booked.dart';
-import 'package:health_test/screens/date_picker.dart';
-import 'package:health_test/screens/my_cart.dart';
+import 'package:health_test/routes/routes.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
@@ -18,10 +16,10 @@ class MyApp extends StatelessWidget {
       designSize: const Size(375, 813),
       builder: (_,child) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: child,
         theme: themeData(),
+        initialRoute: "/",
+        routes: routes,
       ),
-      child: const BookingDone(),
     );
   }
 }

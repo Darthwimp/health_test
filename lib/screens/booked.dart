@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_test/widgets/booked_successfully.dart';
 
 class BookingDone extends StatelessWidget {
@@ -19,9 +20,32 @@ class BookingDone extends StatelessWidget {
           ),
         ),
       ),
-      body: const Center(child: BookedSuccessfully(
-        
-      )),
+      body: Padding(
+        padding: EdgeInsets.symmetric(vertical: 20.sp),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Center(child: BookedSuccessfully()),
+            SizedBox(
+              height: 55.h,
+              width: 333.w,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, "/");
+                },
+                child: Text(
+                  "Back to home",
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: Colors.white,
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.bold,
+                      ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

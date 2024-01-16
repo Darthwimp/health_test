@@ -55,7 +55,9 @@ class MyCartPage extends StatelessWidget {
                 height: 50.h,
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/calendar");
+                  },
                   child: Text(
                     "Schedule",
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(

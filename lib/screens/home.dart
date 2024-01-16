@@ -17,7 +17,9 @@ class HomePage extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, "/cart");
+            },
             icon: const Icon(
               Icons.shopping_cart,
             ),

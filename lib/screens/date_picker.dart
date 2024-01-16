@@ -11,6 +11,9 @@ class CalendarPage extends StatefulWidget {
 }
 
 class _CalendarPageState extends State<CalendarPage> {
+  Color boxBg = Colors.white;
+  Color textBg = Colors.black;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,13 +45,17 @@ class _CalendarPageState extends State<CalendarPage> {
               Gap(15.h),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 10.sp),
-                decoration: BoxDecoration(color: Colors.white, boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    blurRadius: 10.sp,
-                    offset: const Offset(0, 3),
-                  ),
-                ]),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      blurRadius: 10.sp,
+                      offset: const Offset(0, 3),
+                    ),
+                  ],
+                ),
                 child: const ViewCalendar(),
               ),
               Gap(20.h),
@@ -78,19 +85,28 @@ class _CalendarPageState extends State<CalendarPage> {
                       if (isPM) {
                         timeString = "PM";
                       }
-                      return Container(
-                        decoration: BoxDecoration(
-                          border:
-                              Border.all(color: const Color(0xfe10217D), width: 2.sp),
-                          borderRadius: BorderRadius.circular(5.r),
-                        ),
-                        child: Center(
-                          child: Text(
-                            "${time + index}:00 $timeString",
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyMedium
-                                ?.copyWith(fontSize: 12.sp),
+                      return GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            boxBg = const Color(0xfe10217D);
+                            textBg = Colors.white;
+                          });
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: boxBg,
+                            border: Border.all(
+                                color: const Color(0xfe10217D), width: 2.sp),
+                            borderRadius: BorderRadius.circular(5.r),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "${time + index}:00 $timeString",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium
+                                  ?.copyWith(fontSize: 12.sp, color: textBg),
+                            ),
                           ),
                         ),
                       );
@@ -101,13 +117,16 @@ class _CalendarPageState extends State<CalendarPage> {
                 height: 52.h,
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/booked");
+                  },
                   child: Text(
                     "Confirm",
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 13.sp),
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 13.sp,
+                        ),
                   ),
                 ),
               )
