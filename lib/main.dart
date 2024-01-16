@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_test/constants/theme.dart';
+import 'package:health_test/screens/date_picker.dart';
 import 'package:health_test/screens/my_cart.dart';
 
 void main(List<String> args) {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         home: child,
         theme: themeData(),
       ),
-      child: const MyCartPage(),
+      child: const CalendarPage(),
     );
   }
 }

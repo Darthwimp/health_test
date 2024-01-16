@@ -9,7 +9,7 @@ ThemeData themeData(){
       elevation: 0,
       centerTitle: true,
       titleTextStyle: TextStyle(
-        fontSize: 22.sp,
+        fontSize: 21.sp,
         color: Colors.black,
       ),
       iconTheme: IconThemeData(
