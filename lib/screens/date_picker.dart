@@ -81,7 +81,7 @@ class _CalendarPageState extends State<CalendarPage> {
                       return Container(
                         decoration: BoxDecoration(
                           border:
-                              Border.all(color: Color(0xfe10217D), width: 2.sp),
+                              Border.all(color: const Color(0xfe10217D), width: 2.sp),
                           borderRadius: BorderRadius.circular(5.r),
                         ),
                         child: Center(
