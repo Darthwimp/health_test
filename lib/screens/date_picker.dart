@@ -86,12 +86,7 @@ class _CalendarPageState extends State<CalendarPage> {
                         timeString = "PM";
                       }
                       return GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            boxBg = const Color(0xfe10217D);
-                            textBg = Colors.white;
-                          });
-                        },
+                        onTap: () {},
                         child: Container(
                           decoration: BoxDecoration(
                             color: boxBg,
