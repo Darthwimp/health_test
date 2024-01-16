@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_test/constants/theme.dart';
-import 'package:health_test/screens/home.dart';
+import 'package:health_test/screens/my_cart.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         home: child,
         theme: themeData(),
       ),
-      child: const HomePage(),
+      child: const MyCartPage(),
     );
   }
 }

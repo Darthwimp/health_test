@@ -59,11 +59,11 @@ ThemeData themeData(){
         ),
         side: BorderSide(
           color: const Color(0xfe10217D),
-          width: 1.w,
+          width: 2.w,
         ),
         textStyle: TextStyle(
           fontSize: 10.h,
-          fontWeight: FontWeight.w700,
+          fontWeight: FontWeight.bold,
           color: const Color(0xfe10217D),
         ),
       ),
