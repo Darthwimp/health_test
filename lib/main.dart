@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:health_test/constants/theme.dart';
 import 'package:health_test/screens/home.dart';
 
 void main(List<String> args) {
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
       builder: (_,child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         home: child,
+        theme: themeData(),
       ),
       child: const HomePage(),
     );
